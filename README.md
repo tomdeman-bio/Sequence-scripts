@@ -17,4 +17,13 @@ Running kSNP version 2 using assembled microbial genomes (in fasta format)
 --------------------------------------------------------------------------
 perl run_kSNP.pl full_path_containing_the_input_files projectname
 
+Map trimmed reads to contaminant database (hard coded for now) and subtract unmapped reads for downstream analysis
+------------------------------------------------------------------------------------------------------------------
+perl run_bowtie2_subtract_unmapped_reads.pl directory_containing_trimmed_reads_only/*
 
+Eukaryotic part
+================
+
+Generate EVM (EvidenceModeler) suitable GFF3 files from MAKER de novo gene prediction GFF
+-----------------------------------------------------------------------------------------
+perl gff3_2_gff3EVM.pl maker_protein_genes.gff3
