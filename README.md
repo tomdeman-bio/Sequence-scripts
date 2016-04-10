@@ -1,11 +1,15 @@
 Sequence-scripts
 ================
 
-Trimming raw reads and removing sequencing adapters
+Trimming raw reads and remove sequencing adapters
 ---------------------------------------------------
 perl run_fastqMcf.pl directory/containing/raw/reads/only/*
 
-Assembling the trimmed reads using SPAdes
+Map trimmed reads to contaminant database (path to database is hard coded for now) and subtract unmapped reads for downstream analysis
+------------------------------------------------------------------------------------------------------------------
+perl run_bowtie2_subtract_unmapped_reads.pl directory/containing/trimmed/reads/only/*
+
+Assembling the trimmed and contaminant free reads using SPAdes
 -----------------------------------------
 perl run_SPAdes.pl directory/containing/trimmed/reads/only/*
 
@@ -17,9 +21,6 @@ Running kSNP version 2 using assembled microbial genomes (in fasta format)
 --------------------------------------------------------------------------
 perl run_kSNP.pl full/path/containing/the/input/files projectname
 
-Map trimmed reads to contaminant database (hard coded for now) and subtract unmapped reads for downstream analysis
-------------------------------------------------------------------------------------------------------------------
-perl run_bowtie2_subtract_unmapped_reads.pl directory/containing/trimmed/reads/only/*
 
 Eukaryotic part
 ================
