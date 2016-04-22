@@ -16,7 +16,7 @@ Sequence-scripts
 ## Assembling the trimmed and contaminant free reads using [SPAdes] (http://spades.bioinf.spbau.ru)
 
 ### Usage
-    perl run_SPAdes.pl directory/containing/trimmed/reads/only/*
+    perl run_SPAdes.pl directory/containing/trimmed/and/virus/free/reads/only/*
 --------------------------------------
 
 ## Perform the previous three steps using one Shell script. It runs fastq-MCF, Bowtie2, SAMtools, bam2fastq and SPAdes assembler in batch
