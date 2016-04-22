@@ -5,9 +5,9 @@
 use strict;
 
 my $usage = qq(
-        USAGE: perl BaseCount_ContigCount_multi.pl /path/to/sff/files
+        USAGE: perl BaseCount_sequenceCount_from_sff_file.pl /path/to/sff/files
         *************************************************
-        Arguments are the paths to all the sff files in the particular libraries
+        Arguments is the path to all sff files of a particular library
 \n);
 
 die($usage) if (@ARGV == 0);
