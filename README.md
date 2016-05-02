@@ -7,12 +7,6 @@ Sequence-scripts
     perl run_fastqMcf.pl directory/containing/raw/reads/only/*
 --------------------------------------
 
-## Remove PhiX from raw reads using [bbduk] (https://sourceforge.net/projects/bbmap/)
-
-### Usage
-    perl run_bbduk.pl directory/containing/raw/reads/only/*
---------------------------------------
-
 ## Map trimmed reads to contaminant database and subtract unmapped reads for downstream analysis using [Bowtie2] (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), [SAMtools] (http://samtools.sourceforge.net) and [bam2fastq] (https://gsl.hudsonalpha.org/information/software/bam2fastq)
 
 ### Usage
@@ -29,6 +23,24 @@ Sequence-scripts
 
 ### Usage 
     bash fastqMcf-bowtie2-SPAdes.bash
+--------------------------------------
+
+## Remove PhiX from raw reads using [bbduk] (https://sourceforge.net/projects/bbmap/)
+
+### Usage
+    perl run_bbduk.pl directory/containing/raw/reads/only/*
+--------------------------------------
+
+## Trimming PhiX free reads using [Trimmomatic] (http://www.usadellab.org/cms/?page=trimmomatic)
+
+### Usage
+    perl run_trimmomatic.pl directory/containing/PhiX/free/reads/only/*
+--------------------------------------
+
+## Perform the previous two steps + SPAdes assembly using one Shell script. It runs bbduk, Trimmomatic and SPAdes assembler in batch
+
+### Usage
+    bash bbduk-trimmomatic-SPAdes.bash
 --------------------------------------
 
 ## Calculating average coverage of SPAdes assembly
