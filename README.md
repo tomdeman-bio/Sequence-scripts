@@ -37,10 +37,16 @@ Sequence-scripts
     perl run_trimmomatic.pl directory/containing/PhiX/free/reads/only/*
 --------------------------------------
 
-## Perform the previous two steps + SPAdes assembly using one Shell script. It runs bbduk, Trimmomatic and SPAdes assembler in batch
+## Assembling plasmid contigs, rather than plasmid + chromosomal assemblies, from PhiX and contaminant free reads using [PlasmidSPAdes] (http://spades.bioinf.spbau.ru)  
 
 ### Usage
-    bash bbduk-trimmomatic-SPAdes.bash
+    perl run_plasmidSPAdes.pl directory/containing/PhiX_and_contaminant/free/reads/only/*
+--------------------------------------
+
+## Perform the previous three steps + regular SPAdes assembly using one Shell script. It runs bbduk, Trimmomatic, PlasmidSPAdes and SPAdes assembler in batch
+
+### Usage
+    bash bbduk-trimmomatic-SPAdes-plasmidSPAdes.bash
 --------------------------------------
 
 ## Calculating average coverage of SPAdes assembly
@@ -71,4 +77,10 @@ Eukaryotic part
 
 ### Usage
     perl gff3_2_gff3EVM.pl <maker_protein_genes.gff3>
+--------------------------------------
+
+## Make EVM data compatible with [Gbrowse] (http://gbrowse.org/index.html)
+
+### Usage
+    perl fix_evm_for_gbrowse.pl < inputfile.gff3
 --------------------------------------
