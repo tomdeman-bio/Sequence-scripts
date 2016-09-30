@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-#runs PlasmidSPAdes assembler in batch
+#Runs plasmidSPAdes assembler in batch
 #Written by Tom de Man
 
 use warnings;
@@ -27,11 +27,11 @@ foreach my $name (sort keys %paired_files){
 		warn "Couldn't find matching paired end files for file starting with: $name";
 		next;
     }
-    	print "assembling your data....\n";
-    	print "----------------------\n";
-    	print "$paired_files{$name}[0]"." <--> "."$paired_files{$name}[1]"."\n";
+    print "assembling your data....\n";
+    print "----------------------\n";
+    print "$paired_files{$name}[0]"." <--> "."$paired_files{$name}[1]"."\n";
 
-    	my $cmd="spades.py -t 16 --plasmid --careful --only-assembler -1 $paired_files{$name}[0] -2 $paired_files{$name}[1] -o $name"."_PLASMID_assembly";
-    	print $cmd,"\n";
-    	die if system($cmd);
+    my $cmd="spades.py -t 16 --plasmid --careful --only-assembler -1 $paired_files{$name}[0] -2 $paired_files{$name}[1] -o $name"."_PLASMID_contigs";
+    print $cmd,"\n";
+    die if system($cmd);
 }
