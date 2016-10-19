@@ -24,7 +24,7 @@ for i in assemblies/*.fasta
 
 do
         location="$(echo "$i" | cut -d '.' -f 1)"
-		name="$(echo "$location" | cut -d '/' -f 2)"
+	name="$(echo "$location" | cut -d '/' -f 2)"
         prokka --kingdom Bacteria --outdir prokkaDIR_$name --locustag $name $i
 done
 
