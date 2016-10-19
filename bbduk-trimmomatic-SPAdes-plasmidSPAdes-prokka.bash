@@ -1,15 +1,5 @@
 #!/bin/sh
 
-#$ -S /bin/bash
-#$ -pe smp 12
-#$ -N SPAdes
-#$ -o /scicomp/home/xku6/Outbreaks_seq/2016-29_CO_ESBL/pipe.o
-#$ -e /scicomp/home/xku6/Outbreaks_seq/2016-29_CO_ESBL/pipe.e
-#$ -cwd
-#$ -V
-
-PATH=$PATH:/bin/
-
 mkdir PhiX_free_reads
 mkdir trimmed_PhiX_free_reads
 mkdir assemblies
@@ -34,7 +24,7 @@ for i in assemblies/*.fasta
 
 do
         location="$(echo "$i" | cut -d '.' -f 1)"
-	name="$(echo "$location" | cut -d '/' -f 2)"
+		name="$(echo "$location" | cut -d '/' -f 2)"
         prokka --kingdom Bacteria --outdir prokkaDIR_$name --locustag $name $i
 done
 
