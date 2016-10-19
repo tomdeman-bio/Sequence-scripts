@@ -49,6 +49,12 @@ Sequence-scripts
     bash bbduk-trimmomatic-SPAdes-plasmidSPAdes.bash
 --------------------------------------
 
+## Perform the same four steps as indicated above (bbduk-Trimmomatic-SPAdes-PlasmidSPAdes) plus Prokka gene annotation using one Shell script. Will create a separate project folder for this pipeline in the near future
+
+### Usage
+    bash bbduk-trimmomatic-SPAdes-plasmidSPAdes-prokka.bash
+--------------------------------------
+
 ## Calculating average coverage of SPAdes assembly
 
 ### Usage
