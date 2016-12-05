@@ -7,7 +7,7 @@ Sequence-scripts
     perl run_fastqMcf.pl directory/containing/raw/reads/only/*
 --------------------------------------
 
-## Map trimmed reads to contaminant database and subtract unmapped reads for downstream analysis using [Bowtie2] (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), [SAMtools] (http://samtools.sourceforge.net) and [bam2fastq] (https://gsl.hudsonalpha.org/information/software/bam2fastq)
+## Map trimmed reads to contaminant (e.g. PhiX) database and subtract unmapped reads for downstream analysis using [Bowtie2] (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), [SAMtools] (http://samtools.sourceforge.net) and [bam2fastq] (https://gsl.hudsonalpha.org/information/software/bam2fastq)
 
 ### Usage
     perl run_bowtie2_subtract_unmapped_reads.pl directory/containing/trimmed/reads/only/*
@@ -49,7 +49,7 @@ Sequence-scripts
     bash bbduk-trimmomatic-SPAdes-plasmidSPAdes.bash
 --------------------------------------
 
-## Perform the same four steps as indicated above (bbduk-Trimmomatic-SPAdes-PlasmidSPAdes) plus Prokka gene annotation using one Shell script. Will create a separate project folder for this pipeline in the near future
+## Perform the same four steps as indicated above (bbduk-Trimmomatic-SPAdes-PlasmidSPAdes) plus Prokka gene annotation using one Shell script. Prokka is told to only annotate contigs of 500bp and larger. Will create a separate project folder for this pipeline in the near future
 
 ### Usage
     bash bbduk-trimmomatic-SPAdes-plasmidSPAdes-prokka.bash
