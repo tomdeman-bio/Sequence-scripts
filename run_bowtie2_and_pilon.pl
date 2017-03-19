@@ -39,9 +39,9 @@ foreach my $name (sort keys %paired_files){
     print "----------------------\n";
     print "$paired_files{$name}[0]"." <--> "."$paired_files{$name}[1]"."\n";
 	
-	system("bowtie2-build $DB $DB.index");
+    system("bowtie2-build $DB $DB.index");
     system("bowtie2 -x $DB.index -1 $paired_files{$name}[0] -2 $paired_files{$name}[1] -S $path$name.sam --end-to-end -p 12");
     system("samtools view -bS $path$name.sam | samtools sort - $path$name.sort");
-	system("samtools index $path$name.sort.bam $path$name.sort.bai");
-	system("pilon --genome $DB --frags $path$name.sort.bam --mindepth 0.6 --minqual 30 --minmq 30 --fix all --changes --vcf --output $path$name.$DB.pilon");
+    system("samtools index $path$name.sort.bam $path$name.sort.bai");
+    system("pilon --genome $DB --frags $path$name.sort.bam --mindepth 0.6 --minqual 30 --minmq 30 --fix all --changes --vcf --output $path$name.$DB.pilon");
 }
