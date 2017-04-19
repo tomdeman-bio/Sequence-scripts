@@ -14,7 +14,7 @@ do
 
 	echo "[:] Running kraken.  Output: $file.kraken / $file.classified"
 
-	kraken --paired --db $kraken_db --preload --threads 12 --output $file.kraken --classified-out $file.classified $file $rev
+	kraken --fastq-input --paired --db $kraken_db --preload --threads 12 --output $file.kraken --classified-out $file.classified $file $rev
 
 	echo "[:] Generating metaphlan compatible report."
 
@@ -24,6 +24,5 @@ do
 
 	python metaphlan2krona.py -p $file.mpa -k $file.krona
 
-	ktImportText -o all_output.html *.krona 
-
 done
+ktImportText -o all_output.html *.krona
