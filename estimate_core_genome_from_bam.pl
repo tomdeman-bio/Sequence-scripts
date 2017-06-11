@@ -1,5 +1,6 @@
 #! /usr/bin/perl
 
+# Written by Tom de Man
 #script needs sorted bam files 
 #script also needs samtools, bedtools, and awk in order to operate
 
@@ -93,10 +94,6 @@ sub estimate_core {
 		}
 		close COV;
 		push @cov2d, \@n;
-		my $len = scalar @n;
-		my $test = \@n;
-
-		my $lenR = @$test;
  
 	}
 	my $rows = scalar @cov2d;

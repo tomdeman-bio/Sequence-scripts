@@ -1,7 +1,7 @@
 Sequence-scripts
 ================
 
-## Determine the core genome size of a given dataset. The script is assesing sorted BAM files, and the mapping reference in order to estimate the core genome size for a certain depth of coverage. The script needs [samtools](https://github.com/samtools/), [bedtools](http://bedtools.readthedocs.io/en/latest/), and awk.
+## Determine the core genome size of a given dataset. The script is assessing sorted BAM files, and the mapping reference in order to estimate the core genome size for a certain depth of coverage. The script needs [samtools](https://github.com/samtools/), [bedtools](http://bedtools.readthedocs.io/en/latest/), and awk.
 
 ### Usage
     perl estimate_core_genome_from_bam.pl -bam /path/to/bam/files -genome mapping/reference/fasta/file -depth 10
