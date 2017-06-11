@@ -1,6 +1,12 @@
 Sequence-scripts
 ================
 
+## Determine the core genome size of a given dataset. The script is assesing sorted BAM files, and the mapping reference in order to estimate the core genome size for a certain depth of coverage. The script needs [samtools](https://github.com/samtools/), [bedtools](http://bedtools.readthedocs.io/en/latest/), and awk.
+
+### Usage
+    perl estimate_core_genome_from_bam.pl -bam /path/to/bam/files -genome mapping/reference/fasta/file -depth 10
+----------------------------------------------------------------------------------------------------------------
+
 ## Screen raw reads for contamination and get an impression of the bacterial composition of your sample(s). Script is using [Kraken](https://ccb.jhu.edu/software/kraken/) for determining species composition, [KronaTools](https://github.com/marbl/Krona/wiki/KronaTools) for generating multi-layered pie charts, and conversion script [metaphlan2krona.py](https://bitbucket.org/nsegata/metaphlan/src/2f1b17a1f4e9775fe1ce42c8481279a5e69f291f/conversion_scripts/metaphlan2krona.py?at=default)
 
 ### Usage
