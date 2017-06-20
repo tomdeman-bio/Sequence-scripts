@@ -7,6 +7,12 @@ Sequence-scripts
     perl estimate_core_genome_from_bam.pl -bam /path/to/bam/files -genome mapping/reference/fasta/file -depth 10
 ----------------------------------------------------------------------------------------------------------------
 
+## Calculate simple genome assembly stats including N50, number of contigs, total bases, and G+C content
+
+### Usage
+    perl calc_N50_GC_genomesize.pl -i genomeAssembly.fasta -o output.stats
+--------------------------------------------------------------------------
+
 ## Screen raw reads for contamination and get an impression of the bacterial composition of your sample(s). Script is using [Kraken](https://ccb.jhu.edu/software/kraken/) for determining species composition, [KronaTools](https://github.com/marbl/Krona/wiki/KronaTools) for generating multi-layered pie charts, and conversion script [metaphlan2krona.py](https://bitbucket.org/nsegata/metaphlan/src/2f1b17a1f4e9775fe1ce42c8481279a5e69f291f/conversion_scripts/metaphlan2krona.py?at=default)
 
 ### Usage
@@ -37,7 +43,7 @@ Sequence-scripts
     bash fastqMcf-bowtie2-SPAdes.bash
 --------------------------------------
 
-## Calculating average K-mer coverage of SPAdes assembly
+## Calculating average coverage of SPAdes assembly
 
 ### Usage
     perl Calc_coverage_from_spades_assembly.pl <scaffolds.fasta>
