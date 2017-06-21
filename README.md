@@ -43,7 +43,7 @@ Sequence-scripts
     bash fastqMcf-bowtie2-SPAdes.bash
 --------------------------------------
 
-## Calculating average coverage of SPAdes assembly
+## Calculating average K-mer coverage of SPAdes assembly, from your highest K value (usually k=127)
 
 ### Usage
     perl Calc_coverage_from_spades_assembly.pl <scaffolds.fasta>
