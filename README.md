@@ -1,6 +1,12 @@
 Sequence-scripts
 ================
 
+## Cut DNA sequence at a user defined position (e.g. position 63789), and paste the sequence that ranges from start to 63789 to the end of that same sequence. Useful when generating plasmid sequence comparison plots with Easyfig or Geneious. People often cut right before the start of the plasmid replicon gene.
+
+### Usage
+    perl cut_and_paste_seq.pl -cut 63789 -strand <forward/reverse> -seq Plasmid_DNA.fasta > Plasmid_DNA_new_sequence_order.fasta
+-----------------------------------------------------------------------------------------------------------------------------------
+
 ## Determine the core genome size of a given dataset. The script is assessing sorted BAM files, and the mapping reference in order to estimate the core genome size for a certain depth of coverage. The script needs [samtools](https://github.com/samtools/), [bedtools](http://bedtools.readthedocs.io/en/latest/), and awk.
 
 ### Usage
