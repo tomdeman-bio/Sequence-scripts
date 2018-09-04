@@ -1,6 +1,18 @@
 Sequence-scripts
 ================
 
+## Extract metagenomic reads from a particular species or strain using [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml), [samtools](https://github.com/samtools/), and [Picard](https://broadinstitute.github.io/picard/). 
+
+### Usage
+    perl run_bowtie2_subtract_mapped_reads_with_picard directory/containing/metagenomic/samples/only/*
+------------------------------------------------------------------------------------------------------
+
+## Remove human DNA from metagenomic samples to comply with HIPAA regulations (useful when uploading raw data to SRA/ENA)
+
+### Usage
+    perl run_kneaddata_only_human_removal.pl directory/containing/metagenomic/samples/only/*
+--------------------------------------------------------------------------------------------
+
 ## Cut DNA sequence at a user defined position (e.g. position 63789), and paste the sequence that ranges from start to 63789 to the end of that same sequence. Useful when generating plasmid sequence comparison plots with Easyfig or Geneious. People often cut right before the start of the plasmid replicon gene.
 
 ### Usage
